@@ -94,13 +94,24 @@ WSGI_APPLICATION = 'vivanete_fibraoptica.wsgi.app'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'vivanete_app',
+        'USER': 'vivanete_app_owner',
+        'PASSWORD': 'SInEa5T0WuKq',
+        'HOST': 'ep-old-mode-a522n2ad.us-east-2.aws.neon.tech',
+        'PORT': '5432',
+        'OPTIONS': {'sslmode': 'require'},
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -202,7 +213,7 @@ SECURE_FRAME_DENY               = False
 # settings.py
 
 # Configurações de reCAPTCHA
-RECAPTCHA_PUBLIC_KEY = '6LftWkoqAAAAADa7Ba8DcZo6TOEk3bpx34SHkvJI'
-RECAPTCHA_PRIVATE_KEY = '6LftWkoqAAAAAJi7ZeAl_jx6CnkXUiYG5WgdUyij'
+RECAPTCHA_PUBLIC_KEY = os.getenv('RECAPTCHA_PUBLIC_KEY')
+RECAPTCHA_PRIVATE_KEY = os.getenv('RECAPTCHA_PRIVATE_KEY')
 RECAPTCHA_USE_SSL = True
 RECAPTCHA_REQUIRED_SCORE = 0.5 # for v3 captcha
