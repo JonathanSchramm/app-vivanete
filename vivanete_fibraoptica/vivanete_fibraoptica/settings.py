@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'contato',
     'sobre',
     'django_recaptcha',
+    'django_distill',
     # 'django_otp',
     # 'django_otp.plugins.otp_static',   # Para códigos estáticos
     # 'django_otp.plugins.otp_totp',     # Para aplicativos autenticadores (Google Authenticator)
