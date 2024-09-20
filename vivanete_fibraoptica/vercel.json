@@ -23,6 +23,5 @@
         "src": "/(.*)",
         "dest": "vivanete_fibraoptica/wsgi.py"
       }
-    ],
-    "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+    ]
   }
