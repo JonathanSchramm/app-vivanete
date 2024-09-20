@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-jmkw@0jss_pt4ue51vcen3=mji_x722$a8mjmukcsbt94v+k3$'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -87,7 +87,8 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'vivanete_fibraoptica.wsgi.application'
+# WSGI_APPLICATION = 'vivanete_fibraoptica.wsgi.application'
+WSGI_APPLICATION = 'vivanete_fibraoptica.wsgi.app'
 
 
 # Database
